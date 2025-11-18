@@ -26,7 +26,7 @@
 %----------------------------------------------------------------------------------------
 
 % article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,11pt]{article}
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -54,7 +54,8 @@
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
+\usepackage[scale=0.905]{geometry}
+
 
 %tabularx environment
 \usepackage{tabularx}
@@ -79,7 +80,7 @@
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
+\titlespacing{\section}{0pt}{10pt}{5pt}
 
 %for publications
 \usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
@@ -142,12 +143,12 @@
 % \end{tabularx}
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Your Name} \\[7.5pt]
-\href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ username} \ $|$ \ 
-\href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ username} \ $|$ \ 
-\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ email@mysite.com} \ $|$ \ 
-\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
+\Huge{Ujjwal Keshri} \\[7.5pt]
+\href{https://github.com/RustyUjjwal}{\raisebox{-0.05\height}\faGithub\ Github} \ $|$ \ 
+\href{https://www.linkedin.com/in/keshriujjwal}{\raisebox{-0.05\height}\faLinkedin\ Linkedin} \ $|$ \ 
+\href{https://ujjwal-keshri.netlify.app/}{\raisebox{-0.05\height}\faGlobe \ Portfolio} \ $|$ \ 
+\href{mailto:work.ujjwal22@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ work.ujjwal22@gmail.com} \ $|$ \ 
+\href{tel:+919348295082}{\raisebox{-0.05\height}\faMobile \ +91 93482 95082} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -156,27 +157,40 @@
 
 %Interests/ Keywords/ Summary
 \section{Summary}
-This CV can also be automatically compiled and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
+Aspiring Electrical Engineer with hands-on experience in embedded system prototyping and automated control systems. Skilled in programming microcontrollers using C/C++ and implementing IoT protocols for real-time sensor data acquisition. Driven to develop efficient and reliable engineering solutions, with a strong interest in applying technical knowledge to complex real-world problems.
 
 %Experience
 \section{Work Experience}
 
-\begin{jobshort}{Designation}{Jan 2021 - present}
-long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width
-\end{jobshort}
-
-
-\begin{joblong}{Designation}{Mar 2019 - Jan 2021}
-\item long long line of blah blah that will wrap when the table fills the column width
-\item again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
+\begin{joblong}{Industrial Trainee}{June 2024 - July 2024} 
+\item[] \hspace{-1em}\textbf{Indian Oil Corporation Limited | SERPL, Bhubaneswar Pump Station (Jatni)}
+\item Assisted in the maintenance and troubleshooting of electrical systems and equipment at the SERPL, Bhubaneswar Pump Station.
+\item Gained practical experience with the operation and control of automated pumping systems within the pipelines division.
 \end{joblong}
   
 %Projects
 \section{Projects}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
+\textbf{Automated Solar Tracking System} & \hfill \href{https://github.com/RustyUjjwal/Automated-Solar-Tracking-System.git}{Link to Project} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+    \begin{itemize}[nosep, leftmargin=1em, itemsep=3pt, label=--]
+        \item Designed a dual-axis solar tracker on an Arduino platform, using a quadrant of four LDRs to act as the primary positioning sensor.
+        \item Programmed the microcontroller to read analog voltage levels from each LDR, calculate horizontal and vertical error signals, and ignore minor fluctuations within a TOLERANCE dead-zone to prevent motor oscillation.
+        \item Implemented a closed-loop control system that drives two servo motors via PWM signals, stepping their position to nullify the error and actively track the light source, while simultaneously streaming all sensor and position data as JSON packets over Serial.
+    \end{itemize}
+} \\ 
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{IoT Weather Monitoring Station} & \hfill \href{https://github.com/RustyUjjwal/IoT-Weather-Monitoring-Station.git}{Link to Project} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+    \begin{itemize}[nosep, leftmargin=1em, itemsep=3pt, label=--]
+        \item Engineered an IoT weather station using an ESP32 microcontroller, interfacing it with a BME280 sensor via the I2C serial protocol (SDA/SCL) to read temperature, humidity, and pressure data.
+        \item Programmed the ESP32 firmware to use WiFiManager for on-device configuration, enabling it to connect to WiFi and publish sensor readings as JSON payloads to a remote MQTT broker.
+        \item Implemented a dual-data pathway for visualization: a Python backend subscribes to the MQTT stream to log data in SQLite and broadcast via WebSockets, while a JavaScript dashboard can also connect directly to the ESP32's serial port using the Web Serial API.
+    \end{itemize}
+} \\ 
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -184,34 +198,26 @@ long long line of blah blah that will wrap when the table fills the column width
 %----------------------------------------------------------------------------------------
 \section{Education}
 \begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
-
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
-
-2022 & Class 12th Some Board \hfill  (Grades) \\
-
-2021 & Class 10th Some Board \hfill  (Grades) \\
+2023 - present & BTech-Electrical Engineering at  \hfill (CGPA: 8.6/10) \\ 
+\              & \textbf{Odisha University Of Technology and Research,Bhubaneshwar}\\
+2022 & Class 12th CBSE \hfill  (88.60\%) \\
+2021 & Class 10th CBSE \hfill  (89.80\%) \\
 \end{tabularx}
-
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-\printbibliography[heading=none]
-\end{refsection}
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
 \section{Skills}
+\textbf{Technical Skills}\newline
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+Programming Languages & \normalsize{C/C++, Python, JavaScript [React.js], HTML/CSS} \\
+Design \& Simulation & \normalsize{Altium Designer, MATLAB \& Simulink} \\
+Hardware \& Embedded & \normalsize{Arduino, ESP32, STM32, AVR, PCB Design} \\
+%Control \& IoT & \normalsize{PID Control Systems, PLC Programming, LabVIEW, MQTT, WebSockets, Web Serial API} \\
+Data \& Dev Tools & \normalsize{SQLite, JSON, Git, ChatGPT, Gemini, Claude}
 \end{tabularx}
-
-\vfill
-\center{\footnotesize Last updated: \today}
-
+\textbf{Soft Skills}\newline
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\normalsize{Problem-Solving, Analytical Thinking, Detail-Oriented, Self-Motivated}
+\end{tabularx}
 \end{document}
