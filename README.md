@@ -26,24 +26,6 @@ The CV is written in LaTeX (`cv.tex`) and follows a clean, structured format.
 
 The CV is automatically built and deployed to the `build` branch on every push to the main branch via GitHub Actions.
 
-### Compiling Locally
-
-If you wish to compile the PDF on your local machine, you need to have a LaTeX distribution (like TeX Live or MiKTeX) installed.
-
-1.  Navigate to the repository directory.
-2.  Run the following command to generate `cv.pdf`:
-    ```bash
-    make
-    ```
-3.  To clean up intermediate files:
-    ```bash
-    make clean
-    ```
-4.  To clean up intermediate files and the generated PDF:
-    ```bash
-    make distclean
-    ```
-
 ### Workflow
 
 The automated workflow uses the `dante-ev/latex-action` to compile the `.tex` file and `peaceiris/actions-gh-pages` to deploy the resulting PDF and the `index.html` file to the `build` branch, which is configured for GitHub Pages.
