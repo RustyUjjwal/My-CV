@@ -1,54 +1,55 @@
-# autoCV
+# Ujjwal Keshri - Curriculum Vitae (CV)
 
-A clean CV template in LaTeX along with a GitHub action that complies the `*.tex` file and publishes a new PDF version when new changes are pushed to the repo
+This repository serves as the **single source of truth** for my professional Curriculum Vitae. The CV is written in LaTeX and is automatically compiled into a PDF directly from its source file (`cv.tex`) using GitHub Actions.
 
-## Template Design
+**NOTE:** This repository is a personalized fork and adaptation of the excellent [autoCV template by Jitin Nair](https://github.com/jitinnair1/autoCV).
 
-The template is designed to be clean with sections for
-- Tabular sections for Work Experience, Education and Projects
-- Support for including a list of publications read from a `*.bib` file
-- Header with Font Awesome icons
+The latest version of the CV is always available and can be accessed directly:
 
-## Quickstart
-- Fork this repo (you can use the `Use this template` button)
-- Give the workflow write permissions for your forked repo (Settings -> Actions -> General)
-- Modify the `cv.tex` file and push changes to your repo
-- Set GitHub pages source to build branch (Settings -> Pages)
-- The complied PDF will be available under the `build` branch
+**Latest CV Link:** (This link will point to your GitHub Pages URL, e.g., `https://rustyujjwal.github.io/my-cv/`)
 
-You can get a direct link to the generated PDF which you can use on your website, LinkedIn etc. that will always point to the latest version of your CV. Once your site is published, your CV will be accessible at: `https://username.github.io/repo-name/`
+## About the CV
 
-NOTE: For the direct link to work, after editing your copy of `cv.tex` and pushing changes to your repo, under Settings -> Pages set your Github Pages source to the `build` directory
+The CV is written in LaTeX (`cv.tex`) and follows a clean, structured format, including the following sections:
 
-![](https://i.imgur.com/lwATw1o.png)
+* **Summary:** Aspiring Electrical Engineer with hands-on experience in embedded system prototyping and automated control systems.
+* **Work Experience:** Industrial Trainee at Indian Oil Corporation Limited (June 2024 - July 2024).
+* **Projects:** Detailed descriptions of the **Automated Solar Tracking System** and **IoT Weather Monitoring Station**.
+* **Education:** BTech-Electrical Engineering at Odisha University Of Technology and Research.
+* **Technical Skills:** C/C++, Python, JavaScript, Altium Designer, MATLAB/Simulink, Arduino, ESP32, STM32, and more.
 
-## This template on Overleaf
+## Repository Structure
 
-<a href="https://www.overleaf.com/latex/templates/autocv/scfvqfpxncwb"><img alt="Overleaf" src="https://img.shields.io/badge/Overleaf-47A141.svg?style=for-the-badge&logo=Overleaf&logoColor=white"/></a>
+| File | Description |
+| :--- | :--- |
+| `cv.tex` | The main LaTeX source file containing all CV content. |
+| `citations.bib` | A bibliography file for any academic publications or references. |
+| `index.html` | A redirect page to ensure the latest PDF is served via GitHub Pages or a backup link. |
+| `Makefile` | Commands for compiling the PDF locally. |
+| `.github/workflows/build.yml` | The GitHub Action workflow that automatically compiles and deploys the PDF on every push. |
 
-Also, if you have a premium subscription to Overleaf, you can use Overleaf's GitHub integration to push changes to your GitHub repo directly from Overleaf.
+## Development and Building
 
-## Compiling the CV on your local computer
-- type `make` in the `autoCV` directory to produce file `cv.pdf`
-- you can optionally type `make clean` or `make distclean` to remove intermediate files
+The CV is automatically built and deployed to the `build` branch on every push to the main branch via GitHub Actions.
 
-## Detailed Instructions..
+### Compiling Locally
 
-[.. are available here](https://github.com/jitinnair1/autoCV/wiki/How-to-use-autoCV:-Detailed-Instructions)
+If you wish to compile the PDF on your local machine, you need to have a LaTeX distribution (like TeX Live or MiKTeX) installed.
 
-## More options
-- If you'd like a custom URL like `cv.name.com` check out [this page](https://github.com/jitinnair1/autoCV/wiki/Custom-URL-for-your-CV)
-- If you want to add use different versions of the CV for different langauges, you can modify the script [as seen here](https://github.com/MateusRosario/myAutoCV/blob/main/.github/workflows/build.yml) (from Mateus Rosario's [fork](https://github.com/MateusRosario/myAutoCV) of this repo)  
+1.  Navigate to the repository directory.
+2.  Run the following command to generate `cv.pdf`:
+    ```bash
+    make
+    ```
+3.  To clean up intermediate files:
+    ```bash
+    make clean
+    ```
+4.  To clean up intermediate files and the generated PDF:
+    ```bash
+    make distclean
+    ```
 
-## Issues
-Please start a new discussion or issue if you encounter problems
+### Workflow
 
-PS: If you liked the template, do star :star: it! Thanks!
-
-
-### Also, check out:
-
-- [gradfolio](https://github.com/jitinnair1/gradfolio) - a minimal, quick-setup template for a personal website/portfolio
-- [Tail](https://github.com/jitinnair1/tail) - a minimal, quick-setup template for a blog
-- [snippet-book](https://github.com/jitinnair1/snippet-book) -terminal style, clean Jekyll blog theme with catppuccin colours
-
+The automated workflow uses the `dante-ev/latex-action` to compile the `.tex` file and `peaceiris/actions-gh-pages` to deploy the resulting PDF and the `index.html` file to the `build` branch, which is configured for GitHub Pages.
