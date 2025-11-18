@@ -10,7 +10,7 @@ The latest version of the CV is always available and can be accessed directly:
 
 ## About the CV
 
-The CV is written in LaTeX (`cv.tex`) and follows a clean, structured format
+The CV is written in LaTeX (`cv.tex`) and follows a clean, structured format.
 
 ## Repository Structure
 
