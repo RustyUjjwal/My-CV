@@ -10,13 +10,7 @@ The latest version of the CV is always available and can be accessed directly:
 
 ## About the CV
 
-The CV is written in LaTeX (`cv.tex`) and follows a clean, structured format, including the following sections:
-
-* **Summary:** Aspiring Electrical Engineer with hands-on experience in embedded system prototyping and automated control systems.
-* **Work Experience:** Industrial Trainee at Indian Oil Corporation Limited (June 2024 - July 2024).
-* **Projects:** Detailed descriptions of the **Automated Solar Tracking System** and **IoT Weather Monitoring Station**.
-* **Education:** BTech-Electrical Engineering at Odisha University Of Technology and Research.
-* **Technical Skills:** C/C++, Python, JavaScript, Altium Designer, MATLAB/Simulink, Arduino, ESP32, STM32, and more.
+The CV is written in LaTeX (`cv.tex`) and follows a clean, structured format
 
 ## Repository Structure
 
