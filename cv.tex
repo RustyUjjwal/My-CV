@@ -54,7 +54,7 @@
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.905]{geometry}
+\usepackage[scale=0.93]{geometry}
 
 
 %tabularx environment
@@ -157,7 +157,7 @@
 
 %Interests/ Keywords/ Summary
 \section{Summary}
-Aspiring Electrical Engineer with hands-on experience in embedded system prototyping and automated control systems. Skilled in programming microcontrollers using C/C++ and implementing IoT protocols for real-time sensor data acquisition. Driven to develop efficient and reliable engineering solutions, with a strong interest in applying technical knowledge to complex real-world problems.
+An ambitious electrical engineer with hands-on experience in embedded systems, IoT sensor integration, and power system modelling. Skilled in C/C++ microcontroller programming and MATLAB/Simulink for simulation, real-time control, and data-driven analysis. Passionate about building reliable and intelligent engineering solutions across hardware, software, and cyber-physical domains.
 
 %Experience
 \section{Work Experience}
@@ -169,28 +169,38 @@ Aspiring Electrical Engineer with hands-on experience in embedded system prototy
 \end{joblong}
   
 %Projects
+%Projects
 \section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Power Grid Cyber-Attack Detection via V-I Correlation} & \hfill  \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+    \begin{itemize}[nosep, leftmargin=1em, itemsep=3pt, label=--]
+        \item Modelled a 5-bus AC transmission network in MATLAB/Simulink with normalised per-unit baselines to calibrate detection thresholds.
+        \item Implemented detect\_fdi() classifying system state as Normal / Cyber-Attack / Physical Fault at 50 µs sample rate using six FDI attack modes and a weighted event-scoring counter.
+        \item Built classify\_physical\_fault() sub-classifier with four fault codes using RMS buffers and phase-unbalance metrics; detects faults within 150 µs.
+    \end{itemize}
+} \\
+\end{tabularx}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \textbf{Automated Solar Tracking System} & \hfill \href{https://github.com/RustyUjjwal/Automated-Solar-Tracking-System.git}{Link to Project} \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
     \begin{itemize}[nosep, leftmargin=1em, itemsep=3pt, label=--]
-        \item Designed a dual-axis solar tracker on an Arduino platform, using a quadrant of four LDRs to act as the primary positioning sensor.
-        \item Programmed the microcontroller to read analog voltage levels from each LDR, calculate horizontal and vertical error signals, and ignore minor fluctuations within a TOLERANCE dead-zone to prevent motor oscillation.
-        \item Implemented a closed-loop control system that drives two servo motors via PWM signals, stepping their position to nullify the error and actively track the light source, while simultaneously streaming all sensor and position data as JSON packets over Serial.
+        \item Built a dual-axis solar tracker on Arduino using four LDRs to compute horizontal and vertical error signals.
+        \item Implemented a TOLERANCE dead-zone and closed-loop PWM control of two servo motors to actively track the light source and stream JSON data over Serial.
     \end{itemize}
-} \\ 
+} \\
 \end{tabularx}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
 \textbf{IoT Weather Monitoring Station} & \hfill \href{https://github.com/RustyUjjwal/IoT-Weather-Monitoring-Station.git}{Link to Project} \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
     \begin{itemize}[nosep, leftmargin=1em, itemsep=3pt, label=--]
-        \item Engineered an IoT weather station using an ESP32 microcontroller, interfacing it with a BME280 sensor via the I2C serial protocol (SDA/SCL) to read temperature, humidity, and pressure data.
-        \item Programmed the ESP32 firmware to use WiFiManager for on-device configuration, enabling it to connect to WiFi and publish sensor readings as JSON payloads to a remote MQTT broker.
-        \item Implemented a dual-data pathway for visualization: a Python backend subscribes to the MQTT stream to log data in SQLite and broadcast via WebSockets, while a JavaScript dashboard can also connect directly to the ESP32's serial port using the Web Serial API.
+        \item Built an ESP32-based weather station with a BME280 sensor over I²C, publishing JSON readings to an MQTT broker via WiFiManager.
+        \item Implemented a dual-data pathway: Python backend logs to SQLite and broadcasts via WebSockets; dashboard also supports direct ESP32 connection via Web Serial API.
     \end{itemize}
-} \\ 
+} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -211,7 +221,7 @@ Aspiring Electrical Engineer with hands-on experience in embedded system prototy
 \textbf{Technical Skills}\newline
 \begin{tabularx}{\linewidth}{@{}l X@{}}
 Programming Languages & \normalsize{C/C++, Python, JavaScript [React.js], HTML/CSS} \\
-Design \& Simulation & \normalsize{Altium Designer, MATLAB \& Simulink} \\
+Design \& Simulation & \normalsize{Altium Designer, AutoCAD Electrical, MATLAB \& Simulink} \\
 Hardware \& Embedded & \normalsize{Arduino, ESP32, STM32, AVR, PCB Design} \\
 %Control \& IoT & \normalsize{PID Control Systems, PLC Programming, LabVIEW, MQTT, WebSockets, Web Serial API} \\
 Data \& Dev Tools & \normalsize{SQLite, JSON, Git, ChatGPT, Gemini, Claude}
