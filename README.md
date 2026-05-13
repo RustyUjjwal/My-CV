@@ -6,7 +6,7 @@ This repository serves as the **single source of truth** for my professional Cur
 
 The latest version of the CV is always available and can be accessed directly:
 
-**Latest CV Link:**CV (https://rustyujjwal.github.io/My-CV/cv.pdf)
+**Latest CV Link:** [CV](https://rustyujjwal.github.io/My-CV/cv.pdf)
 
 ## About the CV
 
