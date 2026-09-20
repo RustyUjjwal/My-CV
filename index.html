@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">      
+        
+        <!--You can add your name and affiliation below to personalise -->
+        <meta property="og:title" content="My CV"/>
+        
+        <!--You can add your keywords to personalise-->
+        <meta property="og:description" content="Education, Experience, Projects etc."/>
+        
+        <meta property="og:image" content="https://dummyimage.com/100x100/000/fff&text=CV" />
+        <title>CV</title>
+    </head>
+    <body>
+    <script type="text/javascript">
+        // Configuration
+        const primaryLink = "./cv.pdf";
+        const backupLink = "https://drive.google.com/file/d/1SJ_KMh5YG-oTCnuN1n3y-HldOD8D4GzN/view?usp=drive_link";
+
+        // Function to check if the primary link exists
+        fetch(primaryLink, { method: 'HEAD' })
+            .then(response => {
+                if (response.ok) {
+                    // If 200 OK, go to the GitHub PDF
+                    window.location.href = primaryLink;
+                } else {
+                    // If 404 or other error, go to Drive
+                    console.warn("Primary link unavailable, redirecting to backup...");
+                    window.location.href = backupLink;
+                }
+            })
+            .catch(error => {
+                // If network error or fetch fails, go to Drive
+                console.error("Check failed, redirecting to backup...", error);
+                window.location.href = backupLink;
+            });
+    </script>
+    </body>
+</html>
